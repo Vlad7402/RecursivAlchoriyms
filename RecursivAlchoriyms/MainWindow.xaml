@@ -1,0 +1,40 @@
+﻿<Window x:Class="RecursivAlchoriyms.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecursivAlchoriyms"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1080">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="1,1,1,1" BorderBrush="Black" >
+            <Canvas x:Name ="CanDrowFild" SizeChanged="Click_DrowFractal"></Canvas>
+        </Border>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="TBDeepnes" HorizontalAlignment="Left" FontSize="20" Width="25" Height="25" Margin="387,0,0,0" > 1</TextBlock>
+            <Slider HorizontalAlignment="Left" x:Name="SliderDeepnes" ValueChanged="SliderDeepnes_ValueChanged" Width="120" Height="20" Minimum="1" Maximum="9" SmallChange="1" LargeChange="1" Value="1" Margin="263,0,0,-6"/>
+            <TextBlock HorizontalAlignment="Left" Width="257" Height="25" FontSize="20" Margin="6,0,0,0"> Укажите глубину рекурсии:</TextBlock>
+            <Button Grid.Column="1" FontSize="20" Click="Click_DrowFractal">
+                Отрисовать
+            </Button>
+            <Button Grid.Column="1" Grid.Row="1" FontSize="20" Click="CountEllapsedTime">
+                Посчитать время
+            </Button>
+            <RadioButton x:Name="RBSquare" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="328,0,0,1" FontSize="20" Checked="RBSquare_Checked">Ковёр</RadioButton>
+            <RadioButton x:Name="RBTriangle"  Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="181,0,0,1" FontSize="20" IsChecked="True" Checked="RBSquare_Checked">Треугольник</RadioButton>
+            <TextBlock Grid.Row="1" Width="257" Height="25" Margin="6,0,0,0" HorizontalAlignment="Left" FontSize="20"> Выберите фигуру:</TextBlock>
+        </Grid>
+    </Grid>
+</Window>
